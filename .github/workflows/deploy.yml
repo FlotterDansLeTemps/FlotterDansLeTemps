@@ -11,6 +11,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: recursive
+          fetch-depth: 0  # 确保拉取完整历史
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -19,7 +20,10 @@ jobs:
           extended: true
 
       - name: Build
-        run: hugo --minify --cleanDestinationDir
+        run: |
+          hugo version
+          ls -la  # 列出文件验证路径
+          hugo --minify --cleanDestinationDir
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
