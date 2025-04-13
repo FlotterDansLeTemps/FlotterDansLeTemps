@@ -1,0 +1,51 @@
+baseURL = "https://flotterdansletemps.github.io/"title = "Xinghan's Film Reviews"
+theme = "PaperMod"
+languageCode = "en-us"
+defaultContentLanguage = "en"
+enableInlineShortcodes = true
+
+# 新版Hugo要求的分页设置方式
+[pagination]
+  pagerSize = 10
+
+[params]
+  env = "development" # 部署时可以改成 "production"
+  title = "Xinghan's Film Reviews"
+  description = "A personal blog of film reviews by Xinghan"
+  author = "Xinghan"
+  defaultTheme = "auto"
+  disableThemeToggle = false
+  showReadingTime = true
+  showBreadCrumbs = true
+  showPostNavLinks = true
+  showCodeCopyButtons = true
+  showShareButtons = true
+  comments = false
+
+  [params.homeInfoParams]
+    Title = "🎥 Welcome to Xinghan's Movie Review World"
+    Content = "This is a blog where I share thoughts on the films I've watched — one frame at a time."
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/yourusername"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:your@email.com"
+
+[menu]
+
+  [[menu.main]]
+    identifier = "reviews"
+    name = "Reviews"
+    url = "/posts/"
+    weight = 1
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+
