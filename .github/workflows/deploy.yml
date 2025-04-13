@@ -1,40 +1,28 @@
-name: Deploy Hugo
+name: Deploy Hugo site to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main  # Trigger deployment only for the main branch
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-          fetch-depth: 0  # 完整检出历史记录
+    - name: Checkout code
+      uses: actions/checkout@v3
 
-      - name: 调试：显示文件结构
-        run: |
-          pwd
-          ls -la
-          ls -la themes/
+    - name: Set up Hugo
+      uses: peaceiris/actions-hugo@v2
+      with:
+        hugo-version: '0.145.0'  # Specify Hugo version
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
-        with:
-          hugo-version: "0.125.4"  # 指定具体版本
-          extended: true
+    - name: Build the site
+      run: hugo --minify --cleanDestinationDir
 
-      - name: Build
-        run: |
-          hugo version
-          hugo --minify --cleanDestinationDir --debug
-          ls -la public/  # 验证输出
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
-          publish_branch: gh-pages
-
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GH_TOKEN }}  # Use the secret you just added
+        publish_dir: ./public
