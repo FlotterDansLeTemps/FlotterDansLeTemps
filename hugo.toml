@@ -1,4 +1,5 @@
-baseURL = "https://flotterdansletemps.github.io/"title = "Xinghan's Film Reviews"
+baseURL = "https://flotterdansletemps.github.io/"
+title = "Xinghan's Film Reviews"
 theme = "PaperMod"
 languageCode = "en-us"
 defaultContentLanguage = "en"
