@@ -5,12 +5,11 @@ languageCode = "en-us"
 defaultContentLanguage = "en"
 enableInlineShortcodes = true
 
-# 新版Hugo要求的分页设置方式
 [pagination]
   pagerSize = 10
 
 [params]
-  env = "development" # 部署时可以改成 "production"
+  env = "development" # 部署时可改成 production
   title = "Xinghan's Film Reviews"
   description = "A personal blog of film reviews by Xinghan"
   author = "Xinghan"
@@ -27,9 +26,27 @@ enableInlineShortcodes = true
     Title = "🎥 Welcome to Xinghan's Movie Review World"
     Content = "This is a blog where I share thoughts on the films I've watched — one frame at a time."
 
+  [params.assets]
+    favicon = "favicon.png"
+
+  [params.profileMode]
+    enabled = true
+    title = "Hi, I'm Xinghan"
+    subtitle = "Film lover | Scholar | Storyteller"
+    imageUrl = "images/avatar.jpg"
+    imageTitle = "Xinghan"
+
+    [[params.profileMode.buttons]]
+      name = "Read Reviews"
+      url = "/posts/"
+
+    [[params.profileMode.buttons]]
+      name = "About Me"
+      url = "/about/"
+
   [[params.socialIcons]]
     name = "github"
-    url = "https://github.com/yourusername"
+    url = "https://github.com/flotterdansletemps"
 
   [[params.socialIcons]]
     name = "email"
@@ -48,5 +65,3 @@ enableInlineShortcodes = true
     name = "About"
     url = "/about/"
     weight = 2
-
-
