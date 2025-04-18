@@ -4,6 +4,7 @@ theme = "PaperMod"
 languageCode = "en-us"
 defaultContentLanguage = "en"
 enableInlineShortcodes = true
+mainSections = ["posts"]
 
 [pagination]
   pagerSize = 10
