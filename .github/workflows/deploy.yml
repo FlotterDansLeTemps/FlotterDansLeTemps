@@ -27,4 +27,4 @@ jobs:
           personal_token: ${{ secrets.PERSONAL_TOKEN }}  # 你需要设置这个 Secret
           external_repository: FlotterDansLeTemps/FlotterDansLeTemps.github.io
           publish_dir: ./public
-          publish_branch: main
+          publish_branch: gh-pages
