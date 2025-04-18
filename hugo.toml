@@ -30,13 +30,6 @@ mainSections = ["posts"]
   [params.assets]
     favicon = "favicon.png"
 
-  [params.profileMode]
-    enabled = true
-    title = "Hi, I'm Xinghan"
-    subtitle = "Film lover | Scholar | Storyteller"
-    imageUrl = "images/avatar.jpg"
-    imageTitle = "Xinghan"
-
     [[params.profileMode.buttons]]
       name = "Read Reviews"
       url = "/posts/"
