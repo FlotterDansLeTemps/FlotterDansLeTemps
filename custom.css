@@ -1,0 +1,30 @@
+/* custom.css - 覆盖 profileMode 样式，实现大封面背景图 */
+
+.home-info-wrapper {
+    background-image: url("/images/home-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10rem 2rem;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.7);
+  }
+  
+  /* 隐藏默认圆头像 */
+  .home-info img {
+    display: none;
+  }
+  
+  /* 调整标题、副标题样式 */
+  .home-info h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+  
+  .home-info p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+  }
+  

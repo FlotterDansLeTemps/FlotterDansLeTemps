@@ -12,42 +12,41 @@ mainSections = ["posts"]
 [params]
   env = "production"
   title = "Xinghan's Film Reviews"
-  description = "A personal blog of film reviews by Xinghan"
+  description = "Thoughtful reviews of cinema, one frame at a time."
   author = "Xinghan"
   defaultTheme = "auto"
   disableThemeToggle = false
-  ShowReadingTime = true
-  ShowBreadCrumbs = true
-  ShowPostNavLinks = true
-  ShowCodeCopyButtons = true
-  ShowShareButtons = true
+  showReadingTime = true
+  showBreadCrumbs = true
+  showPostNavLinks = true
+  showCodeCopyButtons = true
+  showShareButtons = true
   comments = false
 
-  [params.homeInfoParams]
-    Title = "🎥 Welcome to Xinghan's Movie Review World"
-    Content = "This is a blog where I share thoughts on the films I've watched — one frame at a time."
+  # ✅ 启用 profileMode，实现首页封面图样式
+  [params.profileMode]
+    enabled = true
+    title = "🎬 Xinghan's Film Reviews"
+    subtitle = "Quality reviews of cinema — one frame at a time."
+    imageUrl = "images/home-bg.jpg"        # 实际上我们通过 CSS 将其隐藏并转为背景图
+    imageTitle = "Homepage Banner"
 
+    [[params.profileMode.buttons]]
+      name = "📖 Read Reviews"
+      url = "/posts/"
+
+    [[params.profileMode.buttons]]
+      name = "👤 About Me"
+      url = "/about/"
+
+  # 🎨 启用自定义样式表（将 background 设置为全屏）
   [params.assets]
     favicon = "favicon.png"
+    customCSS = ["css/custom.css"]
 
+# 🔗 社交图标链接
 [[params.socialIcons]]
   name = "github"
   url = "https://github.com/flotterdansletemps"
 
 [[params.socialIcons]]
-  name = "email"
-  url = "mailto:your@email.com"
-
-[menu]
-
-  [[menu.main]]
-    identifier = "reviews"
-    name = "Reviews"
-    url = "/posts/"
-    weight = 1
-
-  [[menu.main]]
-    identifier = "about"
-    name = "About"
-    url = "/about/"
-    weight = 2
